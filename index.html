@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canchas App</title>
+    
+    <!-- Configuración para PWA (App) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+    
+    <!-- Configuración específica para iPhone/iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Canchas">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+            background: #f0f2f5; 
+            padding: 15px; 
+            margin: 0;
+        }
+        h2 { text-align: center; color: #1c1e21; margin-top: 20px; }
+        .list-container { max-width: 500px; margin: auto; padding-bottom: 50px; }
+        .location-item { 
+            background: white; padding: 15px; margin-bottom: 12px; 
+            border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .name { font-weight: bold; color: #333; display: block; margin-bottom: 10px; font-size: 16px; }
+        .actions { display: flex; gap: 10px; }
+        .btn { 
+            flex: 1; text-align: center; text-decoration: none; 
+            padding: 12px; border-radius: 8px; font-size: 14px; font-weight: bold;
+            border: none; cursor: pointer; display: inline-block;
+        }
+        .btn-open { background: #007bff; color: white; }
+        .btn-share { background: #28a745; color: white; }
+        
+        /* Estilo para cuando se presiona un botón */
+        .btn:active { opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+<h2>📍 Ubicaciones de Canchas</h2>
+<div class="list-container" id="list"></div>
+
+<script>
+    // Datos de las ubicaciones
+    const data = [
+        ["1", "AVAROA", "https://maps.app.goo.gl/7BZRDJEr1BPZRouo9"],
+        ["2", "10 DE OCTUBRE", "https://maps.app.goo.gl/Q1GHrAsdE6LMaHsx6"],
+        ["3", "12 DE OCTUBRE", "https://maps.app.goo.gl/UCiC1PeZCpmSjAtt6"],
+        ["4", "AZUCARERO (MONTERO)", "https://maps.app.goo.gl/UEKLyaRQYPSsBY7L8"],
+        ["5", "BAJO OLIVO", "https://maps.app.goo.gl/8Kw9gtviLjfoe8cb6"],
+        ["6", "COMPLEJO BOLOGNIA", "https://maps.app.goo.gl/Xrj9MSWG39DizsL96"],
+        ["7", "COMPLEJO CAR 2022", "https://maps.app.goo.gl/6bEWtVFzeea4HWjZ8"],
+        ["8", "COMPLEJO JMP SOCCER", "https://maps.app.goo.gl/3qzjbUSqpthCPCgPA"],
+        ["9", "ESTADIO MUNICIPAL COTOCA", "https://maps.app.goo.gl/qWWcq1aV3aJ5ZEHc7"],
+        ["10", "ESTADIO KM 9 GUARDIA", "https://maps.app.goo.gl/zrQECBbvfnDSfC7Y8"],
+        ["11", "GUABIRA (MONTERO)", "https://maps.app.goo.gl/dckUSppRZBwSgDKX9"],
+        ["12", "LA MORITA", "https://maps.app.goo.gl/QGbgg8SQgpduAwqC7"],
+        ["13", "MATADERO", "https://maps.app.goo.gl/FwC9sDEdtRQy4gzx9"],
+        ["14", "MINI ESTADIO FABRILES", "https://maps.app.goo.gl/aWorUmbiS8Z58uoV9"],
+        ["15", "PASTA DE CAMPEONES", "https://maps.app.goo.gl/ycEjUpS9sLMAsPaw7"],
+        ["16", "PELOTERO", "https://maps.app.goo.gl/U3EDFaGuztTaJLyS9"],
+        ["17", "PETROCAJA LA MORITA", "https://maps.app.goo.gl/eSRuKGpFbpRCkv5w8"],
+        ["18", "U.E.B.", "https://maps.app.goo.gl/LEnTf68FHBg8pC8U8"],
+        ["19", "VILLA MERCEDES", "https://maps.app.goo.gl/hugZ2C8M1uopPUHz8"],
+        ["20", "VILLA OLIMPICA", "https://maps.app.goo.gl/tu5kcLoGXALfsLGW6"],
+        ["21", "SAN SILVESTRE", "https://maps.app.goo.gl/cHFRrJeryvJzSmZZ7"],
+        ["22", "VIRGEN DE LUJAN", "https://maps.app.goo.gl/MHu2gAoJsXdzdx5D9"],
+        ["23", "SEDE DESTROYERS", "https://maps.app.goo.gl/GBpTUFvyJHRkRUgKA"],
+        ["24", "UAGRM ESTADIO", "https://maps.app.goo.gl/UJ9A1ZgYSwaeeNi28"],
+        ["25", "UAGRM CAMPUS", "https://maps.app.goo.gl/bWDn7eoz267PywgDA"],
+        ["26", "POTRERO", "https://maps.app.goo.gl/v89MpEUYMSBPd9Zj9"],
+        ["27", "ANDRES IBAÑEZ", "https://maps.app.goo.gl/QFC42rpFzCXnvkFf8"],
+        ["28", "LOS PENOCO", "https://maps.app.goo.gl/NQrzkXgSUgx8BhyZ6"],
+        ["29", "FORTALEZA", "https://maps.app.goo.gl/FFohaSVzzunTwVU58"],
+        ["30", "DISTRITO 5", "https://maps.app.goo.gl/LrRW7cAXPtxjhBYy8"],
+        ["31", "DISTRITO 9", "https://maps.app.goo.gl/PLJtRFG3JtQm2xsa7"]
+    ];
+
+    // Función para compartir
+    async function shareLocation(name, url) {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: name,
+                    text: `📍 Ubicación de ${name}:`,
+                    url: url,
+                });
+            } catch (err) {
+                console.log("Error al compartir", err);
+            }
+        } else {
+            // Fallback: copiar al portapapeles si compartir no está disponible
+            navigator.clipboard.writeText(`📍 ${name}: ${url}`);
+            alert("Enlace copiado al portapapeles.");
+        }
+    }
+
+    // Generar la lista en el HTML
+    const listDiv = document.getElementById('list');
+    data.forEach(item => {
+        listDiv.innerHTML += `
+            <div class="location-item">
+                <span class="name">${item[0]}. ${item[1]}</span>
+                <div class="actions">
+                    <a href="${item[2]}" class="btn btn-open" target="_blank">Abrir Mapa</a>
+                    <button onclick="shareLocation('${item[1]}', '${item[2]}')" class="btn btn-share">Compartir</button>
+                </div>
+            </div>
+        `;
+    });
+
+    // --- REGISTRO DEL SERVICE WORKER (Para que sea instalable) ---
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker registrado', reg))
+                .catch(err => console.log('Error al registrar Service Worker', err));
+        });
+    }
+</script>
+
+</body>
+</html>
