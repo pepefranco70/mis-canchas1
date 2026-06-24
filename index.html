@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -50,41 +50,42 @@
 <script>
     // Datos de las ubicaciones
     const data = [
-        ["1","10 DE OCTUBRE","https://maps.app.goo.gl/Q1GHrAsdE6LMaHsx6"],
-        ["2","12 DE OCTUBRE","https://maps.app.goo.gl/UCiC1PeZCpmSjAtt6"],
-        ["3","AVAROA","https://maps.app.goo.gl/7BZRDJEr1BPZRouo9"],
-        ["4","AZUCARERO (MONTERO)","https://maps.app.goo.gl/UEKLyaRQYPSsBY7L8"],
-        ["5","BAJO OLIVO","https://maps.app.goo.gl/8Kw9gtviLjfoe8cb6"],
-        ["6","CAMPUS UNIVERSIDAD GABIREL RENE MORENO","https://maps.app.goo.gl/bWDn7eoz267PywgDA"],
-        ["7","COMPLEJO BOLOGNIA (CIUDAD DE LA ALEGRIA)","https://maps.app.goo.gl/Xrj9MSWG39DizsL96"],
-        ["8","COMPLEJO CAR 2022","https://maps.app.goo.gl/6bEWtVFzeea4HWjZ8"],
-        ["9","COMPLEJO DEPORTIVO ANDRES IBAÑEZ","https://maps.app.goo.gl/QFC42rpFzCXnvkFf8"],
-        ["10","COMPLEJO JMP SOCCER","https://maps.app.goo.gl/3qzjbUSqpthCPCgPA"],
-        ["11","COMPLEJO NUEVA SANTA CRUZ","https://maps.app.goo.gl/hySTTyVmAcUL6DVD7"],
-        ["12","ESTADIO MUNICIPAL DE COTOCA","https://maps.app.goo.gl/qWWcq1aV3aJ5ZEHc7"],
-        ["13","ESTADIO MUNICIPAL DISTRITO 5","https://maps.app.goo.gl/LrRW7cAXPtxjhBYy8"],
-        ["14","ESTADIO MUNICPAL DISTRITO 9","https://maps.app.goo.gl/PLJtRFG3JtQm2xsa7"],
-        ["15","ESTADIO MUNICPAL KM 9 DOBLE VIA LA GUARDIA","https://maps.app.goo.gl/zrQECBbvfnDSfC7Y8"],
-        ["16","ESTADIO UNIVERSIDAD GABIREL RENE MORENO","https://maps.app.goo.gl/UJ9A1ZgYSwaeeNi28"],
-        ["17","ESTADIO VIRGEN DE LUJAN","https://maps.app.goo.gl/MHu2gAoJsXdzdx5D9"],
-        ["18","FORTALEZA","https://maps.app.goo.gl/FFohaSVzzunTwVU58"],
-        ["19","INGENIO AZUCARERO GUABIRA (MONTERO)","https://maps.app.goo.gl/dckUSppRZBwSgDKX9"],
-        ["20","LA MORITA - FRATERNIDAD","https://maps.app.goo.gl/QGbgg8SQgpduAwqC7"],
-        ["21","MATADERO","https://maps.app.goo.gl/FwC9sDEdtRQy4gzx9"],
-        ["22","MINI ESTADIO FABRILES (SINTETICA)","https://maps.app.goo.gl/aWorUmbiS8Z58uoV9"],
-        ["23","PARQUE URBANO LOS PENOCO","https://maps.app.goo.gl/NQrzkXgSUgx8BhyZ6"],
-        ["24","PASTA DE CAMPEONES","https://maps.app.goo.gl/ycEjUpS9sLMAsPaw7"],
-        ["25","PELOTERO","https://maps.app.goo.gl/U3EDFaGuztTaJLyS9"],
-        ["26","PETROCAJA LA MORITA","https://maps.app.goo.gl/eSRuKGpFbpRCkv5w8"],
-        ["27","POTRERO","https://maps.app.goo.gl/v89MpEUYMSBPd9Zj9"],
-        ["28","SAN SILVESTRE","https://maps.app.goo.gl/cHFRrJeryvJzSmZZ7"],
-        ["29","SEDE DE DESTROYERS","https://maps.app.goo.gl/GBpTUFvyJHRkRUgKA"],
-        ["30","SPORTING HUB SANTA CRUZ","https://maps.app.goo.gl/SGbKwNyuqNnzdMHq7"],
-        ["31","U.E.B.","https://maps.app.goo.gl/LEnTf68FHBg8pC8U8"],
-        ["32","VILLA MERCEDES - LA MADRE","https://maps.app.goo.gl/hugZ2C8M1uopPUHz8"],
-        ["33","VILLA OLIMPICA","https://maps.app.goo.gl/tu5kcLoGXALfsLGW6"],
-        ["34","EDGAR PEÑA","https://maps.app.goo.gl/Dc847jcN97nUVCPw9"],
-        ["35","ESCUELA VALLE SANCHEZ","https://maps.app.goo.gl/4CWtcqf7MykX8bZo9"],
+        ["1", "AVAROA", "https://maps.app.goo.gl/7BZRDJEr1BPZRouo9"],
+        ["2", "10 DE OCTUBRE", "https://maps.app.goo.gl/Q1GHrAsdE6LMaHsx6"],
+        ["3", "12 DE OCTUBRE", "https://maps.app.goo.gl/UCiC1PeZCpmSjAtt6"],
+        ["4", "AZUCARERO (MONTERO)", "https://maps.app.goo.gl/UEKLyaRQYPSsBY7L8"],
+        ["5", "BAJO OLIVO", "https://maps.app.goo.gl/8Kw9gtviLjfoe8cb6"],
+        ["6", "COMPLEJO BOLOGNIA", "https://maps.app.goo.gl/Xrj9MSWG39DizsL96"],
+        ["7", "COMPLEJO CAR 2022", "https://maps.app.goo.gl/6bEWtVFzeea4HWjZ8"],
+        ["8", "COMPLEJO JMP SOCCER", "https://maps.app.goo.gl/3qzjbUSqpthCPCgPA"],
+        ["9", "ESTADIO MUNICIPAL COTOCA", "https://maps.app.goo.gl/qWWcq1aV3aJ5ZEHc7"],
+        ["10", "ESTADIO KM 9 GUARDIA", "https://maps.app.goo.gl/zrQECBbvfnDSfC7Y8"],
+        ["11", "GUABIRA (MONTERO)", "https://maps.app.goo.gl/dckUSppRZBwSgDKX9"],
+        ["12", "LA MORITA", "https://maps.app.goo.gl/QGbgg8SQgpduAwqC7"],
+        ["13", "MATADERO", "https://maps.app.goo.gl/FwC9sDEdtRQy4gzx9"],
+        ["14", "MINI ESTADIO FABRILES", "https://maps.app.goo.gl/aWorUmbiS8Z58uoV9"],
+        ["15", "PASTA DE CAMPEONES", "https://maps.app.goo.gl/ycEjUpS9sLMAsPaw7"],
+        ["16", "PELOTERO", "https://maps.app.goo.gl/U3EDFaGuztTaJLyS9"],
+        ["17", "PETROCAJA LA MORITA", "https://maps.app.goo.gl/eSRuKGpFbpRCkv5w8"],
+        ["18", "U.E.B.", "https://maps.app.goo.gl/LEnTf68FHBg8pC8U8"],
+        ["19", "VILLA MERCEDES", "https://maps.app.goo.gl/hugZ2C8M1uopPUHz8"],
+        ["20", "VILLA OLIMPICA", "https://maps.app.goo.gl/tu5kcLoGXALfsLGW6"],
+        ["21", "SAN SILVESTRE", "https://maps.app.goo.gl/cHFRrJeryvJzSmZZ7"],
+        ["22", "VIRGEN DE LUJAN", "https://maps.app.goo.gl/MHu2gAoJsXdzdx5D9"],
+        ["23", "SEDE DESTROYERS", "https://maps.app.goo.gl/GBpTUFvyJHRkRUgKA"],
+        ["24", "UAGRM ESTADIO", "https://maps.app.goo.gl/UJ9A1ZgYSwaeeNi28"],
+        ["25", "UAGRM CAMPUS", "https://maps.app.goo.gl/bWDn7eoz267PywgDA"],
+        ["26", "POTRERO", "https://maps.app.goo.gl/v89MpEUYMSBPd9Zj9"],
+        ["27", "ANDRES IBAÑEZ", "https://maps.app.goo.gl/QFC42rpFzCXnvkFf8"],
+        ["28", "LOS PENOCO", "https://maps.app.goo.gl/NQrzkXgSUgx8BhyZ6"],
+        ["29", "FORTALEZA", "https://maps.app.goo.gl/FFohaSVzzunTwVU58"],
+        ["30", "DISTRITO 5", "https://maps.app.goo.gl/LrRW7cAXPtxjhBYy8"],
+        ["31", "DISTRITO 9", "https://maps.app.goo.gl/PLJtRFG3JtQm2xsa7"]
+        ["32", "BRIGIDA", "https://maps.app.goo.gl/4BA9VhT3tjNVKUUZ8"]
+        ["33", "NORMANDIA", "https://maps.app.goo.gl/2F31rP3pKdCd1eNT6"]
+        ["34", "SIMON BOLIVAR - BARRIO MINERO","https://maps.app.goo.gl/pK2CVnaRUSW5i2qk9"]
+        ["35", "ESCUELA VALLE SANCHEZ", "https://maps.app.goo.gl/VPBGJAfrbXvRTQ2t6"]
+        ["36", "ESTADIO DISTRITO 8 ANDRES IBAÑEZ", "https://maps.app.goo.gl/1rqJgvTyy54Zoohp6"]
     ];
 
     // Función para compartir
@@ -93,7 +94,7 @@
             try {
                 await navigator.share({
                     title: name,
-                    text: `📍 Ubicación de ${name}:`,
+                    text: 📍 Ubicación de ${name}:,
                     url: url,
                 });
             } catch (err) {
@@ -101,7 +102,7 @@
             }
         } else {
             // Fallback: copiar al portapapeles si compartir no está disponible
-            navigator.clipboard.writeText(`📍 ${name}: ${url}`);
+            navigator.clipboard.writeText(📍 ${name}: ${url});
             alert("Enlace copiado al portapapeles.");
         }
     }
